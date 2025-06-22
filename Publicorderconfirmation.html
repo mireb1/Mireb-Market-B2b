@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de commande - Mireb Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mireb Marketplace</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products.html">Produits</a></li>
+                    <li><a href="/cart.html">Panier</a></li>
+                    <li><a href="/my-orders.html">Mes commandes</a></li>
+                    <li id="auth-links">
+                        <!-- Dynamiquement remplacé par JS -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="confirmation-section">
+            <div class="success-message">
+                <h2><i class="check-icon">✓</i> Commande confirmée!</h2>
+                <p>Merci pour votre commande. Vous recevrez bientôt une confirmation par email.</p>
+            </div>
+            
+            <div id="order-details" class="order-details-card">
+                <!-- Les détails de la commande seront affichés ici -->
+                <div class="loading">Chargement des détails de la commande...</div>
+            </div>
+            
+            <div class="confirmation-actions">
+                <a href="/products.html" class="btn-secondary">Continuer vos achats</a>
+                <a href="/my-orders.html" class="btn-primary">Voir mes commandes</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mireb Marketplace</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/order-confirmation.js"></script>
+</body>
+</html>

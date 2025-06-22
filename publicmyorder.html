@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes commandes - Mireb Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mireb Marketplace</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products.html">Produits</a></li>
+                    <li><a href="/cart.html">Panier</a></li>
+                    <li><a href="/my-orders.html" class="active">Mes commandes</a></li>
+                    <li id="auth-links">
+                        <!-- Dynamiquement remplacé par JS -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="orders-section">
+            <h2>Mes commandes</h2>
+            <div id="orders-list">
+                <!-- Les commandes seront affichées ici -->
+                <div class="loading">Chargement des commandes...</div>
+            </div>
+            
+            <div id="no-orders-message" class="no-orders" style="display: none;">
+                <p>Vous n'avez pas encore de commande</p>
+                <a href="/products.html" class="btn-primary">Parcourir les produits</a>
+            </div>
+            
+            <div id="login-required-message" class="login-required" style="display: none;">
+                <p>Veuillez vous connecter pour voir vos commandes</p>
+                <a href="/login.html" class="btn-primary">Se connecter</a>
+                <a href="/register.html" class="btn-secondary">S'inscrire</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mireb Marketplace</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>

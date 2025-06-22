@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Mireb Marketplace</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mireb Marketplace</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/products.html">Produits</a></li>
+                    <li><a href="/cart.html" class="active">Panier</a></li>
+                    <li id="auth-links">
+                        <!-- Dynamiquement remplacé par JS -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="cart-section">
+            <h2>Votre panier</h2>
+            <div id="cart-items">
+                <!-- Les articles du panier seront affichés ici -->
+                <div class="loading">Chargement du panier...</div>
+            </div>
+            
+            <div class="cart-summary" id="cart-summary">
+                <div class="cart-total">
+                    <h3>Total</h3>
+                    <p id="cart-total-price">0.00 €</p>
+                </div>
+            </div>
+            
+            <div id="checkout-section" class="checkout-section">
+                <h3>Informations de livraison</h3>
+                <form id="checkout-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="street">Adresse</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">Ville</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postalCode">Code postal</label>
+                            <input type="text" id="postalCode" name="postalCode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Pays</label>
+                        <input type="text" id="country" name="country" required value="France">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment-method">Mode de paiement</label>
+                        <select id="payment-method" name="paymentMethod">
+                            <option value="reception" selected>Paiement à la réception</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Notes (optionnel)</label>
+                        <textarea id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                    
+                    <div id="error-message" class="error-message"></div>
+                    
+                    <div class="checkout-buttons">
+                        <a href="/products.html" class="btn-secondary">Continuer vos achats</a>
+                        <button type="submit" id="place-order-btn" class="btn-primary">Commander</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="empty-cart-message" class="empty-cart" style="display: none;">
+                <p>Votre panier est vide</p>
+                <a href="/products.html" class="btn-primary">Parcourir les produits</a>
+            </div>
+            
+            <div id="login-required-message" class="login-required" style="display: none;">
+                <p>Veuillez vous connecter pour passer commande</p>
+                <a href="/login.html" class="btn-primary">Se connecter</a>
+                <a href="/register.html" class="btn-secondary">S'inscrire</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mireb Marketplace</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
